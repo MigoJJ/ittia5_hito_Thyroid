@@ -1,11 +1,12 @@
-package thyroidComm;
+package thyroidJFrame;
 
-
-import java.awt.BorderLayout;
+import java.awt.BorderLayout;	
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,18 +16,39 @@ public class MyFrame extends JFrame implements MouseListener {
     private JPanel panel1, panel2;
     private JButton button1, button2;
     private JTextField textField1, textField2;
+    private JButton b, b1, b2, b3, b4;
 
     public MyFrame() {
-        super("My Frame");
-        setSize(400, 300);
+        super("Thyroid disease Management Frame");
+        setSize(1400, 1300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         panel1 = new JPanel();
         panel1.setBackground(Color.RED);
+        panel1.setPreferredSize(new Dimension(300,100));
+        
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(10, 0, 10, 0);
+        gbc.gridwidth = GridBagConstraints.REMAINDER;
+        
+        b = new JButton("click1");//creating instance of JButton  
+        b2 = new JButton("click2");//creating instance of JButton  
+        b3 = new JButton("click3");//creating instance of JButton  
+        b4 = new JButton("click4");//creating instance of JButton  
+        
+        panel1.add(b,gbc);
+        panel1.add(b2,gbc);
+        panel1.add(b3,gbc);
+        panel1.add(b4,gbc);
+        
+        JButton doit = new JButton("Do It!");
+        panel1.add( doit );
         panel1.addMouseListener(this);
 
         panel2 = new JPanel();
         panel2.setBackground(Color.BLUE);
+        panel2.setPreferredSize(new Dimension(300,100));
         panel2.addMouseListener(this);
 
         button1 = new JButton("Button 1");
