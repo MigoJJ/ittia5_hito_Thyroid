@@ -1,4 +1,4 @@
-package thyroidJFrame;
+package thyroidComm;
 
 import java.awt.BorderLayout;	
 import java.awt.Color;
