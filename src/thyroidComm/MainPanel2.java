@@ -57,6 +57,13 @@ class MainPanel2 extends JPanel {
         });
     }
 
+    private static class ThyroidReturnList {
+        public static JPanel ThyroidReturnList() {
+            JPanel panel = new JPanel();
+            panel.add(new JLabel("Thyroid Return List"));
+            return panel;
+        }
+    }
     private class ButtonPanel extends JPanel {
 
         public ButtonPanel() {
