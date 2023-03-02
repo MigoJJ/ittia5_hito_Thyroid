@@ -26,14 +26,11 @@ class ThyroidMain extends JPanel {
         registration.setBorder(BorderFactory.createTitledBorder(title));
         registration.add(PanelType.USER_AGREEMENT.panel);
 
-        registration.add(ThyroidReturnList.thyroidReturnList("Symptome"));
-
+        registration.add(ThyroidReturnList.thyroidReturnList("Patientvisitfor"));
         
         ButtonPanel buttonPanel = new ButtonPanel();
         buttonPanel.setBorder(BorderFactory.createTitledBorder("Button Panel"));
-        
-//        registration.setPreferredSize(new Dimension(650, 350));// hardCoded sizing
-        
+        // registration.setPreferredSize(new Dimension(650, 350));// hardCoded sizing
         add(registration, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
     }
@@ -48,7 +45,6 @@ class ThyroidMain extends JPanel {
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
-
             @Override
             public void run() {
                 new ThyroidMain().display();
@@ -56,13 +52,6 @@ class ThyroidMain extends JPanel {
         });
     }
 
-//    private static class ThyroidReturnList {
-//        public static JPanel ThyroidReturnList() {
-//            JPanel panel = new JPanel();
-//            panel.add(new JLabel("Thyroid Return List"));
-//            return panel;
-//        }
-//    }
     private class ButtonPanel extends JPanel {
         private JTextField textField;
         public ButtonPanel() {
@@ -80,9 +69,8 @@ class ThyroidMain extends JPanel {
                     public void actionPerformed(ActionEvent e) {
                         registration.removeAll();
                         registration.add(panel.create());
-                        
-                        registration.add(ThyroidReturnList.thyroidReturnList("Patientvisitfor"));
 
+                        registration.add(ThyroidReturnList.thyroidReturnList("Symptome"));
                         
                         frame.pack();
                         frame.setLocationRelativeTo(null);
@@ -93,13 +81,11 @@ class ThyroidMain extends JPanel {
     }
 
     private enum PanelType {
-
         USER_AGREEMENT("TFT", 2),
         USER_INFO("User Information", 2),
         ENROLLMENT("Enrollment Form", 2),
         USER_INFO1("User Information", 2),
         ENROLLMENT1("Enrollment Form", 2);
-    	
         private String name;
         private JButton button;
         private JPanel panel;
@@ -112,8 +98,6 @@ class ThyroidMain extends JPanel {
 
         private JPanel create() {
             this.panel = new JPanel(new GridLayout(0, 1));
-            
-           
             return panel;
         }
     }
