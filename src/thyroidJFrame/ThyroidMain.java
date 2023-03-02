@@ -25,6 +25,7 @@ class ThyroidMain extends JPanel {
     	this.setLayout(new BorderLayout());
         registration.setBorder(BorderFactory.createTitledBorder(title));
         registration.add(PanelType.ThyroidSx.panel);
+        
         ButtonPanel buttonPanel = new ButtonPanel();
         buttonPanel.setBorder(BorderFactory.createTitledBorder("Button Panel"));
         add(registration, BorderLayout.CENTER);
@@ -53,8 +54,6 @@ class ThyroidMain extends JPanel {
     	private JTextField textField;
         public ButtonPanel() {
             this.textField = new JTextField(20);
-            f  = new Font("Lucida Console", Font.ITALIC,20);
-            this.textField.setFont(f);
             this.add(textField);
             for (final PanelType panel : PanelType.values()) {
                 final JButton button = panel.button;
@@ -87,7 +86,7 @@ class ThyroidMain extends JPanel {
             this.name = name;
             this.count= count;
             this.button = new JButton(name);
-            this.button.setFont(new Font("Arial", Font.BOLD, 14));
+            this.button.setFont(new Font("Arial", Font.PLAIN, 14));
             this.panel = create();
         }
 
@@ -95,6 +94,7 @@ class ThyroidMain extends JPanel {
             this.panel = new JPanel(new GridLayout(0, 1));
             this.panel.add(new JLabel(name));
             this.panel.add(new JLabel(" "));
+
 //            for (int i = 0; i < count; i++) {
 //                this.panel.add(new JLabel("Label " + String.valueOf(i + 1)));
 //                            }

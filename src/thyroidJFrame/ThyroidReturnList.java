@@ -16,12 +16,14 @@ public class ThyroidReturnList extends ThyroidMain {
 
 	public static JPanel ThyroidReturnList () {
     	JPanel panel = new JPanel();
+
     	panel.setLayout((LayoutManager) new BoxLayout(panel, BoxLayout.Y_AXIS));
 //    	panel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
     	
     	String[] result = ThyroidReturnList.ThyroidEnter();
     	for (int i = 0; i < ( result.length); i++) {
     		String labelText = result[i];
+
           panel.add(new JLabel(labelText));
                   }
 
