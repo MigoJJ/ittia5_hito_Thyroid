@@ -1,11 +1,5 @@
 package thyroidJFrame;
 
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.LayoutManager;
-import java.awt.Panel;
-import java.util.ArrayList;
-
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,9 +8,8 @@ public class ThyroidReturnList extends ThyroidMain {
     public static JPanel thyroidReturnList(String itemtitle) {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        
+
         String[] result = thyroidEnter(itemtitle);
-       
         for (int i = 0; i < result.length; i++) {
             panel.add(new JLabel(result[i]));
         }
@@ -25,9 +18,8 @@ public class ThyroidReturnList extends ThyroidMain {
 
     public static String[] thyroidEnter(String item) {
         String[] strs = null;
-
         switch (item) {
-            case "Thyroid Enter":
+            case "Patientvisitfor":
                 strs = new String[] {
                         "1....New Patient",
                         "        " + "11....Hyperthryoridism",
@@ -47,12 +39,12 @@ public class ThyroidReturnList extends ThyroidMain {
                         "	14 TFT abnormality in routine check with pregnancy",
                 };
                 break;
-            case "User Information":
+            case "Symptome":
                 strs = new String[] {
-                        "Label ThyroidEnter1Hyperthryoridism",
-                        "Label ThyroidEnter1Hyperthryoridism1",
-                        "Label ThyroidEnter1Hyperthryoridism2",
-                        "Label Hyperthryoridism",
+                        "Label Sx ThyroidEnter1Hyperthryoridism",
+                        "Label Sx  ThyroidEnter1Hyperthryoridism1",
+                        "Label SX    ThyroidEnter1Hyperthryoridism2",
+                        "Label Sx	Hyperthryoridism",
                         "Label Hyperthryoridism1",
                         "Label Hyperthryoridism2",
                         "Label Hyperthryoridism",
